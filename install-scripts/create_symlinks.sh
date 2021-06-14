@@ -7,8 +7,8 @@ if [ $(basename $(pwd)) != "dotfiles" ]; then
 fi
 
 configuration_directory_files="$(pwd)/.home-configuration/.*"
-scripts_directory="$(pwd)/.scripts"
 
+scripts_directory="$(pwd)/.scripts"
 home_scripts_directory="$HOME/.scripts"
 
 # symlink all the home directory files
@@ -32,6 +32,8 @@ done
 
 echo -e '\n'
 
+echo "Removing old script directiory at $home_scripts_directory"
+rm $home_scripts_directory
 echo "Symlinking script directory $scripts_directory to $home_scripts_directory"  >> $log_file
 ln -sf $scripts_directory $home_scripts_directory
 
