@@ -101,7 +101,7 @@ fi
 
 # source the scripts files
 if [ -d "$HOME/.scripts" ] ; then
-    for script_file in "$HOME/scripts"; do
+    for script_file in "$HOME/.scripts/*"; do
         source $script_file
     done
 fi
